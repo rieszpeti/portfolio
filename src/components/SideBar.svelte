@@ -44,7 +44,7 @@
     <div class="h-full px-3 py-4 overflow-y-auto">
       {#each Object.entries(sideBarSections) as [sectionName, sectionItems]}
         <ul class="space-y-2 font-medium align-middle">
-          <li>{sectionName}</li>
+          <li class="mt-6 font-bold text-gray-900 dark:text-white">{sectionName}</li>
           {#each sectionItems as tab}
             <li>
               <a href={tab.href} class="flex items-center p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 group">
