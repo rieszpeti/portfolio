@@ -15,7 +15,7 @@
       <slot />
     </div>
 
-    <div class="sticky bottom-0 component-bg-color font-color">
+    <div class="sticky bottom-0 rounded-t-lg component-bg-color font-color">
       <Footer />
     </div>
   </div>
