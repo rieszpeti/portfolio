@@ -26,11 +26,8 @@
         { name: 'Explore', href: '#Explore', icon: MdiCompassOutline },
         { name: 'Experience', href: '#experience', icon: MingcuteSuitcaseLine },
         { name: 'Projects', href: '#projects', icon: LucidePen },
-        { name: 'About', href: '#about', icon: RiUserLine },
-      ],
-      Resources: [
-        { name: 'Feed', href: '#feed', icon: BiGrid1x2 },
         { name: 'Stack', href: '#stack', icon: MdiStackoverflow },
+        { name: 'About', href: '#about', icon: RiUserLine },
       ],
       Connect: [
         { name: 'Contact', href: '#contact', icon: MdiContactOutline },
