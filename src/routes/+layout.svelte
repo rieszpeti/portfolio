@@ -5,7 +5,7 @@
 </script>
 
 <div class="flex h-screen flex-col md:flex-row">
-  <div class="w-full md:w-1/6 hidden md:block">
+  <div class="w-full md:w-1/6 hidden md:block component-bg-color">
     <SideBar />
   </div>
 
@@ -15,10 +15,18 @@
       <slot />
     </div>
 
-    <div class="sticky bottom-0">
+    <div class="sticky bottom-0 component-bg-color font-color">
       <Footer />
     </div>
   </div>
 </div>
 
+<style>
+  .component-bg-color {
+    background-color: #1c1c1c;
+  }
 
+  :global .font-color {
+    color: #707070;
+  }
+</style>
