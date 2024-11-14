@@ -1,5 +1,6 @@
 <script lang="ts">
-	import ShowCopySuccess from "./ShowCopySuccess.svelte";
+	import Experience from "./Experience.svelte";
+import ShowCopySuccess from "./ShowCopySuccess.svelte";
 	import Stack from "./Stack.svelte";
 
     interface MainButton {
@@ -68,6 +69,8 @@
 <ShowCopySuccess {isShowEmailMessage} {emailMessage} />
 
 <Stack />
+
+<Experience />
 
 <style>
     :global(.button-bg-color) {
