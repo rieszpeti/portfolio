@@ -8,6 +8,7 @@
     import SkillIconsGitlabLight from '~icons/skill-icons/gitlab-light';
     import DeviconPytorch from '~icons/devicon/pytorch';
     import DeviconSvelte from '~icons/devicon/svelte';
+    import SkillIconsDocker from '~icons/skill-icons/docker';
     import DeviconAzure from '~icons/devicon/azure';
     import SkillIconsTypescript from '~icons/skill-icons/typescript';
     import DeviconHtml5 from '~icons/devicon/html5';
