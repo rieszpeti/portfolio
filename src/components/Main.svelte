@@ -1,74 +1,16 @@
 <script lang="ts">
+    import IntroSection from "./IntroSection.svelte";
+	import MainButtons from "./MainButtons.svelte";
+
+    import Stack from "./Stack.svelte";
+    import Experience from "./Experience.svelte";
+    import Projects from "./Projects.svelte";
 	import Education from "./Education.svelte";
-	import Experience from "./Experience.svelte";
-	import Projects from "./Projects.svelte";
-    import ShowCopySuccess from "./ShowCopySuccess.svelte";
-	import Stack from "./Stack.svelte";
-
-    interface MainButton {
-      name: string;
-      href: string;
-    }
-
-    const email = import.meta.env.VITE_MY_EMAIL;
-    const cv = import.meta.env.VITE_CV_LINK
-
-    const buttons: MainButton[] = [
-        { name: 'About', href: '/About' },
-        { name: 'Email', href: email },
-        { name: 'CV', href: cv }
-    ];
-
-    let isShowEmailMessage = false;
-    let emailMessage = '';
-
-    const copyEmail = () => {
-        navigator.clipboard.writeText(email)
-            .then(() => {
-                emailMessage = "Email copied";
-                isShowEmailMessage = true;
-                setTimeout(() => isShowEmailMessage = false, 5000);
-            })
-            .catch(err => {
-                emailMessage = 'Oops, something went wrong while copying the email. Please try again later.';
-                isShowEmailMessage = true;
-                if (import.meta.env.MODE === 'development') {
-                    console.error('Failed to copy email: ', err);
-                }
-            });
-    };
-
 </script>
 
-<h1 class="text-2xl mt-4 max-sm:flex max-sm:flex-col max-sm:items-center max-sm:justify-center">
-    Hey, I'm Peter,<br>
-    <span class="block mt-2">A Backend software engineer.</span>
-</h1>
+<IntroSection />
 
-<span class="block mt-2 font-color max-sm:flex max-sm:flex-col max-sm:items-center max-sm:justify-center">
-    Experienced in building reliable, scalable systems and web applications. 
-    Focused on creating efficient solutions while exploring new technologies 
-    to improve workflows and processes.
-</span>
-
-<div class="flex flex-wrap gap-4 mt-4 max-sm:flex-col max-sm:items-center max-sm:space-y-2">
-    {#each buttons as { name, href }}
-        <button 
-            class="rounded w-28 py-2 button-bg-color text-white hover:bg-gray-600 max-sm:w-40"
-            on:click={() => { 
-                if (name === 'Email') {
-                    copyEmail();
-                } else {
-                    window.location.href = href;
-                }
-            }}
-        >
-            {name}
-        </button>
-    {/each}
-</div>
-
-<ShowCopySuccess {isShowEmailMessage} {emailMessage} />
+<MainButtons />
 
 <Stack />
 
