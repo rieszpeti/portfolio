@@ -1,4 +1,4 @@
-<h2 id="experience" class="text-2xl mt-8 max-sm:flex max-sm:flex-col max-sm:items-center max-sm:justify-center">
+<h2 id="experience" class="lg:mt-8 text-2xl max-sm:flex max-sm:flex-col max-sm:items-center max-sm:justify-center">
     Experience
 </h2>
 
