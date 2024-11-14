@@ -19,6 +19,13 @@
     let emailMessage = '';
 
     const copyEmail = () => {
+    const isMobile = /Mobi|Android/i.test(navigator.userAgent); // Basic check for mobile devices
+
+    if (isMobile) {
+        emailMessage = `Copy on Phone: ${email}`;
+        isShowEmailMessage = true;
+        setTimeout(() => isShowEmailMessage = false, 7000);
+    } else {
         navigator.clipboard.writeText(email)
             .then(() => {
                 emailMessage = "Email copied";
@@ -32,7 +39,9 @@
                     console.error('Failed to copy email: ', err);
                 }
             });
-    };
+    }
+};
+
 
 </script>
 
