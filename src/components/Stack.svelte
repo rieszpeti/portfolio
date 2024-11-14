@@ -120,11 +120,10 @@
             if (matrixIdx < matrixLength - 1) {
                 matrixIdx++;
             } else {
-                matrixIdx = 1;
+                matrixIdx = 0;
             }
     }
 
-    localStorage.setItem('matrixIndex', matrixIdx.toString());
     matrix = stackMatrix[matrixIdx];  
     console.debug(`Current Matrix Index: ${matrixIdx}`, matrix);
 }
