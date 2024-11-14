@@ -130,12 +130,12 @@
 
 </script>
 
-<h2 id="stack" class="text-2xl mt-4 max-sm:flex max-sm:flex-col max-sm:items-center max-sm:justify-center">
+<h2 id="stack" class="text-2xl mt-4 pt-4 max-sm:flex max-sm:flex-col max-sm:items-center max-sm:justify-center">
     Stack
 </h2>
 
 <!-- Large view -->
-<div class="hidden lg:grid lg:grid-rows-4 lg:grid-flow-col gap-4 mt-4">
+<div class="hidden mt-4 lg:grid lg:grid-rows-4 lg:grid-flow-col">
     {#each stackList as stack}
       <div class="flex items-center space-x-2">
         <stack.icon class="w-10 h-10 {stack.style}" />
@@ -145,7 +145,7 @@
 </div>
 
 <!-- Small view -->
-<div id="controls-carousel" class="relative w-full mt-4 lg:hidden">
+<div id="controls-carousel" class="relative w-full lg:hidden">
     {#key matrix}
         <div class="relative overflow-hidden rounded-lg md:h-96 p-4">
             {#each matrix as row}
