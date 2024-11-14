@@ -146,7 +146,7 @@
 </div>
 
 <!-- Small view -->
-<div id="controls-carousel" class="relative w-full mt-4">
+<div id="controls-carousel" class="relative w-full mt-4 lg:hidden">
     {#key matrix}
         <div class="relative overflow-hidden rounded-lg md:h-96 p-4">
             {#each matrix as row}
@@ -166,21 +166,20 @@
 
     <!-- Transparent Left Area (Previous) -->
     <button type="button" 
-            class="absolute z-30 top-0 left-0 h-full w-1/4 xs:w-[20%] cursor-pointer bg-transparent group focus:outline-none"
+            class="absolute z-30 top-0 left-0 h-full w-1/4 xs:w-[15%] sm:w-[20%] cursor-pointer bg-transparent group focus:outline-none"
             on:click={() => slideHandler('Previous')}>
-        <svg class="absolute left-4 xs:left-0 top-1/2 transform -translate-y-1/2 w-6 h-6 text-white dark:text-gray-800" 
+        <svg class="absolute left-4 xs:left-1 top-1/2 transform -translate-y-1/2 w-5 xs:w-4 h-5 xs:h-4 text-white dark:text-gray-800" 
             aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
         </svg>
         <span class="sr-only">Previous</span>
     </button>
 
-
     <!-- Transparent Right Area (Next) -->
     <button type="button" 
-            class="absolute z-30 top-0 right-0 h-full w-1/4 xs:w-[20%] cursor-pointer bg-transparent group focus:outline-none"
+            class="absolute z-30 top-0 right-0 h-full w-1/4 xs:w-[15%] sm:w-[20%] cursor-pointer bg-transparent group focus:outline-none"
             on:click={() => slideHandler('Next')}>
-        <svg class="absolute right-4 xs:right-0 top-1/2 transform -translate-y-1/2 w-6 h-6 text-white dark:text-gray-800" 
+        <svg class="absolute right-4 xs:right-1 top-1/2 transform -translate-y-1/2 w-5 xs:w-4 h-5 xs:h-4 text-white dark:text-gray-800" 
              aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
         </svg>
