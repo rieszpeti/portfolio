@@ -1,13 +1,13 @@
 <script lang="ts">
-    import MdiCompassOutline from '~icons/mdi/compass-outline';
     import MingcuteSuitcaseLine from '~icons/mingcute/suitcase-line';
     import LucidePen from '~icons/lucide/pen';
     import RiUserLine from '~icons/ri/user-line';
-    import BiGrid1x2 from '~icons/bi/grid-1x2';
+    import CarbonEducation from '~icons/carbon/education';
     import MdiStackoverflow from '~icons/mdi/stackoverflow';
     import MdiContactOutline from '~icons/mdi/contact-outline';
     import MdiLinkedin from '~icons/mdi/linkedin';
     import MdiGithub from '~icons/mdi/github';
+
     import type { Component } from 'svelte';
     import type { SVGAttributes } from 'svelte/elements';
   
@@ -23,10 +23,10 @@
   
     const sideBarSections: SideBar = {
       Main: [
-        { name: 'Explore', href: '#explore', icon: MdiCompassOutline },
+        { name: 'Stack', href: '#stack', icon: MdiStackoverflow },
         { name: 'Experience', href: '#experience', icon: MingcuteSuitcaseLine },
         { name: 'Projects', href: '#projects', icon: LucidePen },
-        { name: 'Stack', href: '#stack', icon: MdiStackoverflow },
+        { name: 'Education', href: '#education', icon: CarbonEducation },
         { name: 'About', href: '#about', icon: RiUserLine },
       ],
       Connect: [
