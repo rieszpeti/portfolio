@@ -1,5 +1,6 @@
 <script lang="ts">
 	import ShowCopySuccess from "./ShowCopySuccess.svelte";
+	import Stack from "./Stack.svelte";
 
     interface MainButton {
       name: string;
@@ -65,6 +66,8 @@
 </div>
 
 <ShowCopySuccess {isShowEmailMessage} {emailMessage} />
+
+<Stack />
 
 <style>
     .button-bg-color {
