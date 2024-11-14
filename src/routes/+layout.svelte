@@ -11,7 +11,7 @@
 
   <div class="overflow-auto w-full md:w-5/6 px-4 md:px-8 max-w-screen-xl mx-auto flex flex-col min-h-screen">
     <!-- Main content-->
-    <div class="flex-1">
+    <div class="flex-1 mb-6">
       <slot />
     </div>
 
