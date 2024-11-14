@@ -70,7 +70,8 @@
 <Stack />
 
 <style>
-    .button-bg-color {
+    :global(.button-bg-color) {
         background-color: #2b2b2b;
     }
 </style>
+
