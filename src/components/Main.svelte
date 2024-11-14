@@ -6,6 +6,7 @@
     import Experience from "./Experience.svelte";
     import Projects from "./Projects.svelte";
 	import Education from "./Education.svelte";
+	import About from "./About.svelte";
 </script>
 
 <IntroSection />
@@ -19,6 +20,8 @@
 <Projects />
 
 <Education />
+
+<About />
 
 <style>
     :global(.button-bg-color) {

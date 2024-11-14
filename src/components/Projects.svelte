@@ -1,5 +1,5 @@
-<h2 class="text-2xl mt-8 max-sm:flex max-sm:flex-col max-sm:items-center max-sm:justify-center">
-    <a href="#experience">Projects</a>
+<h2 id="projects" class="text-2xl mt-8 max-sm:flex max-sm:flex-col max-sm:items-center max-sm:justify-center">
+    Projects
 </h2>
 
 <p class="mt-6"><strong>C#</strong></p>

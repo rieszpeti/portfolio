@@ -1,5 +1,5 @@
-<h2 class="text-2xl mt-8 max-sm:flex max-sm:flex-col max-sm:items-center max-sm:justify-center">
-    <a href="#education">Education</a>
+<h2 id="education" class="text-2xl mt-8 max-sm:flex max-sm:flex-col max-sm:items-center max-sm:justify-center">
+    Education
 </h2>
 
 <p class="mt-6"><strong>B.Sc in Computer Science Engineering | Obuda University, Budapest</strong></p>

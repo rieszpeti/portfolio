@@ -130,9 +130,9 @@
 
 </script>
 
-<h1 class="text-2xl mt-4 max-sm:flex max-sm:flex-col max-sm:items-center max-sm:justify-center">
-    <a href="#stack">Stack</a>
-</h1>
+<h2 id="stack" class="text-2xl mt-4 max-sm:flex max-sm:flex-col max-sm:items-center max-sm:justify-center">
+    Stack
+</h2>
 
 <!-- Large view -->
 <div class="hidden lg:grid lg:grid-rows-4 lg:grid-flow-col gap-4 mt-4">

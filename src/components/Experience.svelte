@@ -1,5 +1,5 @@
-<h2 class="text-2xl mt-8 max-sm:flex max-sm:flex-col max-sm:items-center max-sm:justify-center">
-    <a href="#experience">Experience</a>
+<h2 id="experience" class="text-2xl mt-8 max-sm:flex max-sm:flex-col max-sm:items-center max-sm:justify-center">
+    Experience
 </h2>
 
 <p class="mt-6"><strong>2023 - Junior Consultant Developer | E.ON Digital Technology Kft. | Contractor</strong></p>
