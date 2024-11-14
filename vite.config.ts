@@ -3,6 +3,7 @@ import { defineConfig } from 'vite';
 import Icons from 'unplugin-icons/vite'
 
 export default defineConfig({
+	base: "/Peter.Riesz/",
 	plugins: [
 		sveltekit(),
 		Icons({
