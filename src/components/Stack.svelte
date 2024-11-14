@@ -9,11 +9,11 @@
     import DeviconPytorch from '~icons/devicon/pytorch';
     import DeviconSvelte from '~icons/devicon/svelte';
     import SkillIconsDocker from '~icons/skill-icons/docker';
-    import DeviconAzure from '~icons/devicon/azure';
+    import DeviconPlainAzure from '~icons/devicon-plain/azure';
     import SkillIconsTypescript from '~icons/skill-icons/typescript';
     import DeviconHtml5 from '~icons/devicon/html5';
     import SkillIconsCss from '~icons/skill-icons/css';
-    import SkillIconsTailwindcssDark from '~icons/skill-icons/tailwindcss-dark';
+    import LineiconsTailwindcss from '~icons/lineicons/tailwindcss';
     import SimpleIconsIconify from '~icons/simple-icons/iconify';
     import DeviconPostgresql from '~icons/devicon/postgresql';
     import DeviconMongodb from '~icons/devicon/mongodb';
@@ -24,7 +24,7 @@
     import EosIconsApiOutlined from '~icons/eos-icons/api-outlined';
     import DeviconGit from '~icons/devicon/git';
     import MdiGithub from '~icons/mdi/github';
-    import DeviconAzuredevops from '~icons/devicon/azuredevops';
+    import CodiconAzureDevops from '~icons/codicon/azure-devops';
     import DeviconMatlab from '~icons/devicon/matlab';
 
     interface StackItem {
@@ -36,8 +36,8 @@
     const stackList: StackItem[] = [
         { name: '.NET', icon: SkillIconsDotnet },
         { name: 'Blazor', icon: DeviconBlazor },
-        { name: 'Azure', icon: DeviconAzure },
-        { name: 'DevOps', icon: DeviconAzuredevops},
+        { name: 'Azure', icon: DeviconPlainAzure },
+        { name: 'DevOps', icon: CodiconAzureDevops},
         { name: 'Docker', icon: SkillIconsDocker},
         { name: 'Git', icon: DeviconGit },
         { name: 'GitLab', icon: SkillIconsGitlabLight },
@@ -49,7 +49,7 @@
         { name: 'Typescipt', icon: SkillIconsTypescript },
         { name: 'HTML5', icon: DeviconHtml5 },
         { name: 'CSS', icon: SkillIconsCss },
-        { name: 'TailwindCSS', icon: SkillIconsTailwindcssDark },
+        { name: 'TailwindCSS', icon: LineiconsTailwindcss },
         { name: 'Svelte', icon: DeviconSvelte },
         { name: 'Iconify', icon: SimpleIconsIconify, style: 'text-blue-500' },
         { name: 'WebAPI', icon: EosIconsApiOutlined, style: 'text-green-500' },
@@ -138,7 +138,7 @@
 <div class="hidden lg:grid lg:grid-rows-4 lg:grid-flow-col gap-4 mt-4">
     {#each stackList as stack}
       <div class="flex items-center space-x-2">
-        <stack.icon class={stack.style} />
+        <stack.icon class="w-10 h-10 {stack.style}" />
         <span>{stack.name}</span>
       </div>
     {/each}
@@ -152,7 +152,7 @@
                 <div class="grid grid-cols-2">
                     {#each row as stack}
                         <div class="flex flex-col items-center justify-center p-4"> 
-                            <stack.icon class={stack.style} />
+                            <stack.icon class="w-10 h-10 {stack.style}" />
                             <div class="flex justify-center items-center">
                                 <span>{stack.name}</span>
                             </div>
