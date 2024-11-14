@@ -1,7 +1,8 @@
 <script lang="ts">
 	import Education from "./Education.svelte";
 	import Experience from "./Experience.svelte";
-import ShowCopySuccess from "./ShowCopySuccess.svelte";
+	import Projects from "./Projects.svelte";
+    import ShowCopySuccess from "./ShowCopySuccess.svelte";
 	import Stack from "./Stack.svelte";
 
     interface MainButton {
@@ -72,6 +73,8 @@ import ShowCopySuccess from "./ShowCopySuccess.svelte";
 <Stack />
 
 <Experience />
+
+<Projects />
 
 <Education />
 
