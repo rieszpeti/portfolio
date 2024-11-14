@@ -1,6 +1,6 @@
-<h1 class="text-2xl mt-8 max-sm:flex max-sm:flex-col max-sm:items-center max-sm:justify-center">
+<h2 class="text-2xl mt-8 max-sm:flex max-sm:flex-col max-sm:items-center max-sm:justify-center">
     <a href="#experience">Experience</a>
-</h1>
+</h2>
 
 <p class="mt-6"><strong>2023 - Junior Consultant Developer | E.ON Digital Technology Kft. | Contractor</strong></p>
 <p class="mt-4">Application delivery as BAU of non-SAP applications: responsibility of maintaining and operating the programs and processes, ensuring their smooth functioning and efficient performance over time.</p>
