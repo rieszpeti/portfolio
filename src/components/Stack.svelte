@@ -33,8 +33,8 @@
     }
 
     const stackList: Stack[] = [
-        { name: 'Blazor', icon: DeviconBlazor },
         { name: '.NET', icon: SkillIconsDotnet },
+        { name: 'Blazor', icon: DeviconBlazor },
         { name: 'Azure', icon: DeviconAzure },
         { name: 'DevOps', icon: DeviconAzuredevops},
         { name: 'Git', icon: DeviconGit },
