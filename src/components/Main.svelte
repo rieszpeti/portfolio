@@ -72,6 +72,8 @@ import ShowCopySuccess from "./ShowCopySuccess.svelte";
 
 <Experience />
 
+<Education />
+
 <style>
     :global(.button-bg-color) {
         background-color: #2b2b2b;
