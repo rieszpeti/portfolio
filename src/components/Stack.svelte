@@ -27,13 +27,13 @@
     import DeviconAzuredevops from '~icons/devicon/azuredevops';
     import DeviconMatlab from '~icons/devicon/matlab';
 
-    interface Stack {
+    interface StackItem {
       name: string;
       icon: Component<SVGAttributes<SVGSVGElement>>;
       style?: string;
     }
 
-    const stackList: Stack[] = [
+    const stackList: StackItem[] = [
         { name: '.NET', icon: SkillIconsDotnet },
         { name: 'Blazor', icon: DeviconBlazor },
         { name: 'Azure', icon: DeviconAzure },
@@ -60,13 +60,83 @@
         { name: 'Matlab', icon: DeviconMatlab },
     ];
 
+    function orderByMatrix<T>(items: T[], rows: number, columns: number): T[][][] {
+        const matrices: T[][][] = [];
+        let matrix: T[][] = Array.from({ length: rows }, () => []);
+        
+        let rowIndex = 0;
+        let colIndex = 0;
+
+        for (const item of items) {
+            matrix[rowIndex][colIndex] = item;
+            colIndex++;
+
+            if (colIndex === columns) {
+                colIndex = 0;
+                rowIndex++;
+            }
+
+            if (rowIndex === rows) {
+                matrices.push(matrix);
+                matrix = Array.from({ length: rows }, () => []); // Reset matrix
+                rowIndex = 0;
+            }
+            }
+
+            if (matrix.some(row => row.length > 0)) {
+                matrices.push(matrix);
+            }
+
+        return matrices;
+    }
+
+    const rows = 4;
+    const columns = 2;
+
+    const stackMatrix = orderByMatrix(stackList, rows, columns);
+
+    const matrixLength = stackMatrix.length;
+
+    var matrixIdx = 0;
+
+    // svelte-ignore reactive_declaration_non_reactive_property
+    $: matrix = stackMatrix[matrixIdx];
+
+    const slideDirection = {
+        Previous: 'Previous',
+        Next: 'Next',
+    } as const;
+
+    type SlideDirection = typeof slideDirection[keyof typeof slideDirection];
+
+    function slideHandler(direction: SlideDirection): void {
+        if (direction === slideDirection.Previous) {
+            if (matrixIdx > 0) {
+                matrixIdx--;
+            } else {
+                matrixIdx = matrixLength - 1
+            }
+        } else if (direction === slideDirection.Next) {
+            if (matrixIdx < matrixLength - 1) {
+                matrixIdx++;
+            } else {
+                matrixIdx = 1;
+            }
+    }
+
+    localStorage.setItem('matrixIndex', matrixIdx.toString());
+    matrix = stackMatrix[matrixIdx];  
+    console.debug(`Current Matrix Index: ${matrixIdx}`, matrix);
+}
+
 </script>
 
 <h1 class="text-2xl mt-4 max-sm:flex max-sm:flex-col max-sm:items-center max-sm:justify-center">
     <a href="#stack">Stack</a>
 </h1>
 
-<div class="grid grid-rows-4 grid-flow-col gap-4 mt-4">
+<!-- Large view -->
+<div class="hidden lg:grid lg:grid-rows-4 lg:grid-flow-col gap-4 mt-4">
     {#each stackList as stack}
       <div class="flex items-center space-x-2">
         <stack.icon class={stack.style} />
@@ -74,5 +144,46 @@
       </div>
     {/each}
 </div>
-  
-  
+
+<!-- Small view -->
+<div id="controls-carousel" class="relative w-full mt-4">
+    {#key matrix}
+        <div class="relative overflow-hidden rounded-lg md:h-96 p-4">
+            {#each matrix as row}
+                <div class="grid grid-cols-2">
+                    {#each row as stack}
+                        <div class="flex flex-col items-center justify-center p-4"> 
+                            <stack.icon class={stack.style} />
+                            <div class="flex justify-center items-center">
+                                <span>{stack.name}</span>
+                            </div>
+                        </div>
+                    {/each}
+                </div>
+            {/each}
+        </div>
+    {/key}
+
+    <!-- Transparent Left Area (Previous) -->
+    <button type="button" 
+            class="absolute z-30 top-0 left-0 h-full w-1/4 xs:w-[20%] cursor-pointer bg-transparent group focus:outline-none"
+            on:click={() => slideHandler('Previous')}>
+        <svg class="absolute left-4 xs:left-0 top-1/2 transform -translate-y-1/2 w-6 h-6 text-white dark:text-gray-800" 
+            aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+        </svg>
+        <span class="sr-only">Previous</span>
+    </button>
+
+
+    <!-- Transparent Right Area (Next) -->
+    <button type="button" 
+            class="absolute z-30 top-0 right-0 h-full w-1/4 xs:w-[20%] cursor-pointer bg-transparent group focus:outline-none"
+            on:click={() => slideHandler('Next')}>
+        <svg class="absolute right-4 xs:right-0 top-1/2 transform -translate-y-1/2 w-6 h-6 text-white dark:text-gray-800" 
+             aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+        </svg>
+        <span class="sr-only">Next</span>
+    </button>
+</div>
