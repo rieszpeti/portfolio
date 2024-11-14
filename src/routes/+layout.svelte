@@ -2,8 +2,6 @@
   import "../app.css";
   import Footer from "../components/Footer.svelte";
 	import SideBar from "../components/SideBar.svelte";
-
-  export const prerender = true;
 </script>
 
 <div class="flex h-screen flex-col md:flex-row">
