@@ -10,7 +10,7 @@
     const cv = import.meta.env.VITE_CV_LINK
 
     const buttons: MainButton[] = [
-        { name: 'About', href: '/About' },
+        { name: 'About', href: '#about' },
         { name: 'Email', href: email },
         { name: 'CV', href: cv }
     ];
