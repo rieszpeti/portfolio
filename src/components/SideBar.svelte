@@ -23,7 +23,7 @@
   
     const sideBarSections: SideBar = {
       Main: [
-        { name: 'Explore', href: '#Explore', icon: MdiCompassOutline },
+        { name: 'Explore', href: '#explore', icon: MdiCompassOutline },
         { name: 'Experience', href: '#experience', icon: MingcuteSuitcaseLine },
         { name: 'Projects', href: '#projects', icon: LucidePen },
         { name: 'Stack', href: '#stack', icon: MdiStackoverflow },

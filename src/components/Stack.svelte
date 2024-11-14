@@ -38,6 +38,7 @@
         { name: 'Blazor', icon: DeviconBlazor },
         { name: 'Azure', icon: DeviconAzure },
         { name: 'DevOps', icon: DeviconAzuredevops},
+        { name: 'Docker', icon: SkillIconsDocker},
         { name: 'Git', icon: DeviconGit },
         { name: 'GitLab', icon: SkillIconsGitlabLight },
         { name: 'GitHub', icon: MdiGithub },
@@ -62,7 +63,7 @@
 </script>
 
 <h1 class="text-2xl mt-4 max-sm:flex max-sm:flex-col max-sm:items-center max-sm:justify-center">
-    <a href="#Stack">Stack</a>
+    <a href="#stack">Stack</a>
 </h1>
 
 <div class="grid grid-rows-4 grid-flow-col gap-4 mt-4">
