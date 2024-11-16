@@ -44,7 +44,7 @@
           <li class="mt-6 font-bold text-gray-900 dark:text-white">{sectionName}</li>
           {#each sectionItems as tab}
             <li>
-              <a href={tab.href} class="flex items-center p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 group">
+              <a href="{tab.href}" class="flex items-center p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 group">
                 <tab.icon class="w-5 h-5 transition duration-75 dark:group-hover:text-white font-color" />
                 <span class="ms-3">{tab.name}</span>
               </a>
