@@ -16,7 +16,7 @@ jobs:
       - run: |
           flyctl deploy \
             --remote-only \
-            --access-token=${{ secrets.FLY_API_TOKEN }}
+            --access-token=${{ secrets.FLY_API_TOKEN }} \
             --env VITE_CV_LINK=${{ secrets.VITE_CV_LINK }} \
             --env VITE_GITHUB=${{ secrets.VITE_GITHUB }} \
             --env VITE_LINKEDIN=${{ secrets.VITE_LINKEDIN }} \
