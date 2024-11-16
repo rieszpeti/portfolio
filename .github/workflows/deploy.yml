@@ -4,6 +4,17 @@ on:
   push:
     branches: 'main'
 
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
 jobs:
   build_site:
     runs-on: ubuntu-latest
@@ -21,17 +32,14 @@ jobs:
         run: npm install
 
       - name: build
-        env:
-          BASE_PATH: '/portfolio'
         run: |
+            npm ci
             npm run build
-            touch build/.nojekyll
 
       - name: Upload Artifacts
         uses: actions/upload-pages-artifact@v3
         with:
- # this should match the `pages` option in your adapter-static options
-          path: 'build/'
+          path: ./build
 
   deploy:
     needs: build_site
