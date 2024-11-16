@@ -1,5 +1,7 @@
 # sv
 
+[![Fly Deploy](https://github.com/rieszpeti/portfolio/actions/workflows/fly-deploy.yml/badge.svg?branch=master&event=release)](https://github.com/rieszpeti/portfolio/actions/workflows/fly-deploy.yml)
+
 Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
 
 ## Creating a project
