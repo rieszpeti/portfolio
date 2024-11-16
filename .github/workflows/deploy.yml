@@ -2,8 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: 'main'
-
+    branches: ['main']
   workflow_dispatch:
 
 permissions:
@@ -31,16 +30,27 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: build
+      - name: Log BASE_PATH
+        run: |
+          echo "BASE_PATH: /${{ github.event.repository.name }}"
+
+      - name: Build site
         env:
           BASE_PATH: '/${{ github.event.repository.name }}'
         run: |
-            npm run build
+          echo "Starting build process..."
+          npm run build
+          echo "Build completed."
+
+      - name: Debug Build Artifacts
+        run: |
+          echo "Build directory structure:"
+          ls -R build
 
       - name: Upload Artifacts
         uses: actions/upload-pages-artifact@v3
         with:
-          path: 'build/'
+          path: 'build/' # Make sure this matches your SvelteKit output directory
 
   deploy:
     needs: build_site
@@ -50,11 +60,10 @@ jobs:
       pages: write
       id-token: write
 
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-
     steps:
-      - name: Deploy
+      - name: Debug Uploaded Artifacts
+        run: echo "Artifacts uploaded for deployment."
+
+      - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
