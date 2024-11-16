@@ -50,7 +50,7 @@ jobs:
       - name: Upload Artifacts
         uses: actions/upload-pages-artifact@v3
         with:
-          path: 'build/' # Make sure this matches your SvelteKit output directory
+          path: 'build/'
 
   deploy:
     needs: build_site
@@ -62,7 +62,10 @@ jobs:
 
     steps:
       - name: Debug Uploaded Artifacts
-        run: echo "Artifacts uploaded for deployment."
+        run: |
+          echo "Artifacts uploaded for deployment."
+          echo "Kimeneti könyvtár tartalma:"
+          ls -R build
 
       - name: Deploy to GitHub Pages
         id: deployment
