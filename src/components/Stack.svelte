@@ -135,10 +135,10 @@
 </h2>
 
 <!-- Large view -->
-<div class="hidden mt-4 lg:grid lg:grid-rows-4 lg:grid-flow-col">
+<div class="hidden mt-4 lg:grid lg:grid-rows-4 lg:grid-flow-col lg:gap-4">
     {#each stackList as stack}
       <div class="flex items-center space-x-2">
-        <stack.icon class="w-10 h-10 {stack.style}" />
+        <stack.icon class="w-8 h-8 {stack.style}" />
         <span>{stack.name}</span>
       </div>
     {/each}
