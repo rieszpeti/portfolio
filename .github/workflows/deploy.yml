@@ -30,13 +30,7 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Log BASE_PATH
-        run: |
-          echo "BASE_PATH: /${{ github.event.repository.name }}"
-
       - name: Build site
-        env:
-          BASE_PATH: '/${{ github.event.repository.name }}'
         run: |
           echo "Starting build process..."
           npm run build
@@ -64,7 +58,7 @@ jobs:
       - name: Debug Uploaded Artifacts
         run: |
           echo "Artifacts uploaded for deployment."
-          echo "Kimeneti könyvtár tartalma:"
+          echo "Output dir:"
           ls -R build
 
       - name: Deploy to GitHub Pages
