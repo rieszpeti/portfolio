@@ -19,7 +19,7 @@ jobs:
       - run: |
           flyctl deploy \
             --remote-only \
-            --env VITE_CV_LINK=${{ secrets.VITE_CV_LINK }} \
-            --env VITE_GITHUB=${{ secrets.VITE_GITHUB }} \
-            --env VITE_LINKEDIN=${{ secrets.VITE_LINKEDIN }} \
-            --env VITE_MY_EMAIL=${{ secrets.VITE_MY_EMAIL }}
+            --build-secret VITE_CV_LINK=${{ secrets.VITE_CV_LINK }} \
+            --build-secret VITE_GITHUB=${{ secrets.VITE_GITHUB }} \
+            --build-secret VITE_LINKEDIN=${{ secrets.VITE_LINKEDIN }} \
+            --build-secret VITE_MY_EMAIL=${{ secrets.VITE_MY_EMAIL }}
