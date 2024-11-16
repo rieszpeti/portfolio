@@ -5,6 +5,8 @@ on:
   push:
     branches:
       - master
+env:
+  FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
 jobs:
   deploy:
     name: Deploy app
@@ -19,5 +21,3 @@ jobs:
             --env VITE_GITHUB=${{ secrets.VITE_GITHUB }} \
             --env VITE_LINKEDIN=${{ secrets.VITE_LINKEDIN }} \
             --env VITE_MY_EMAIL=${{ secrets.VITE_MY_EMAIL }}
-        env:
-          FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
