@@ -30,7 +30,7 @@
         { name: 'About', href: '#about', icon: RiUserLine },
       ],
       Connect: [
-        { name: 'Contact', href: '#contact', icon: MdiContactOutline },
+        { name: 'Contact', href: 'mailto:' + import.meta.env.VITE_MY_EMAIL, icon: MdiContactOutline },
         { name: 'LinkedIn', href: import.meta.env.VITE_LINKEDIN, icon: MdiLinkedin },
         { name: 'GitHub', href: import.meta.env.VITE_GITHUB, icon: MdiGithub },
       ],
