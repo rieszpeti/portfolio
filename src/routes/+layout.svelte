@@ -5,7 +5,7 @@
 </script>
 
 <div class="flex h-screen flex-col md:flex-row">
-  <div class="w-full md:w-1/6 hidden md:block component-bg-color max-w-[12rem]">
+  <div class="w-full md:w-1/6 hidden md:block component-bg-color max-w-[12rem] contur-color">
     <SideBar />
   </div>
 
@@ -15,7 +15,7 @@
       <slot />
     </div>
 
-    <div class="sticky bottom-0 rounded-t-lg component-bg-color font-color">
+    <div class="sticky bottom-0 rounded-t-lg component-bg-color font-color contur-color">
       <Footer />
     </div>
   </div>
@@ -24,6 +24,10 @@
 <style>
   .component-bg-color {
     background-color: #1c1c1c;
+  }
+
+  .contur-color {
+    border: 2px solid #222222; 
   }
 
   :global .font-color {
