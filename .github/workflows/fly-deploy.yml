@@ -5,8 +5,10 @@ on:
   push:
     branches:
       - master
+env:
+  FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
 jobs:
-  deploy:
+  deploy: 
     name: Deploy app
     runs-on: ubuntu-latest
     concurrency: deploy-group    # optional: ensure only one action runs at a time
@@ -17,7 +19,6 @@ jobs:
       - run: |
           flyctl deploy \
             --remote-only \
-            --access-token=${{ secrets.FLY_API_TOKEN }} \
             --env VITE_CV_LINK=${{ secrets.VITE_CV_LINK }} \
             --env VITE_GITHUB=${{ secrets.VITE_GITHUB }} \
             --env VITE_LINKEDIN=${{ secrets.VITE_LINKEDIN }} \
