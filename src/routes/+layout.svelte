@@ -4,6 +4,10 @@
 	import SideBar from "../components/SideBar.svelte";
 </script>
 
+<svelte:head>
+	<title>Peter Riesz</title>
+</svelte:head>
+
 <div class="flex h-screen flex-col md:flex-row">
   <div class="w-full md:w-1/6 hidden md:block component-bg-color max-w-[12rem] contur-color">
     <SideBar />

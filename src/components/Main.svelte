@@ -9,6 +9,10 @@
 	import About from "./About.svelte";
 </script>
 
+<svelte:head>
+	<meta name="description" content="Peter Riesz's portfolio website" />
+</svelte:head>
+
 <IntroSection />
 
 <MainButtons />
