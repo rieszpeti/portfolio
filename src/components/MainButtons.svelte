@@ -6,12 +6,11 @@
       href: string;
     }
 
-    const email = import.meta.env.VITE_MY_EMAIL;
-    const cv = import.meta.env.VITE_CV_LINK
+    const email = "peter.riesz.developer@gmail.com";
 
     const buttons: MainButton[] = [
-        { name: 'About', href: '#about' },
-        { name: 'Email', href: "peter.riesz.developer@gmail.com" },
+        { name: 'About', href: "#about" },
+        { name: 'Email', href: email },
         { name: 'CV', href: "https://drive.google.com/file/d/1SXZ65dmnlDYuTZexWJgjaAzdhs5nxt_d/view?usp=sharing" }
     ];
 
