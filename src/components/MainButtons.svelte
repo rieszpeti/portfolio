@@ -18,7 +18,7 @@
     let emailMessage = '';
 
     const copyEmail = () => {
-        if (navigator.clipboard) {
+        if (!navigator.clipboard) {
             emailMessage = `Copy manually, because clipboard is not available: ${email}`;
             isShowEmailMessage = true;
             setTimeout(() => isShowEmailMessage = false, 7000);
