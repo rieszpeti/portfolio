@@ -18,28 +18,26 @@
     let emailMessage = '';
 
     const copyEmail = () => {
-    const isMobile = /Mobi|Android/i.test(navigator.userAgent); // Basic check for mobile devices
-
-    if (isMobile) {
-        emailMessage = `Copy on Phone: ${email}`;
-        isShowEmailMessage = true;
-        setTimeout(() => isShowEmailMessage = false, 7000);
-    } else {
-        navigator.clipboard.writeText(email)
-            .then(() => {
-                emailMessage = "Email copied";
-                isShowEmailMessage = true;
-                setTimeout(() => isShowEmailMessage = false, 5000);
-            })
-            .catch(err => {
-                emailMessage = 'Oops, something went wrong while copying the email. Please try again later.';
-                isShowEmailMessage = true;
-                if (import.meta.env.MODE === 'development') {
-                    console.error('Failed to copy email: ', err);
-                }
-            });
-    }
-};
+        if (navigator.clipboard) {
+            emailMessage = `Copy manually, because clipboard is not available: ${email}`;
+            isShowEmailMessage = true;
+            setTimeout(() => isShowEmailMessage = false, 7000);
+        } else {
+            (navigator.clipboard as Clipboard).writeText(email)
+                .then(() => {
+                    emailMessage = "Email copied";
+                    isShowEmailMessage = true;
+                    setTimeout(() => isShowEmailMessage = false, 5000);
+                })
+                .catch(err => {
+                    emailMessage = 'Oops, something went wrong while copying the email. Please try again later.';
+                    isShowEmailMessage = true;
+                    if (import.meta.env.MODE === 'development') {
+                        console.error('Failed to copy email: ', err);
+                    }
+                });
+        }
+    };
 
 
 </script>
