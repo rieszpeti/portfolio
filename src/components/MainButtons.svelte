@@ -11,8 +11,8 @@
 
     const buttons: MainButton[] = [
         { name: 'About', href: '#about' },
-        { name: 'Email', href: email },
-        { name: 'CV', href: cv }
+        { name: 'Email', href: "peter.riesz.developer@gmail.com" },
+        { name: 'CV', href: "https://drive.google.com/file/d/1SXZ65dmnlDYuTZexWJgjaAzdhs5nxt_d/view?usp=sharing" }
     ];
 
     let isShowEmailMessage = false;

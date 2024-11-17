@@ -30,9 +30,9 @@
         { name: 'About', href: '#about', icon: RiUserLine },
       ],
       Connect: [
-        { name: 'Contact', href: 'mailto:' + import.meta.env.VITE_MY_EMAIL, icon: MdiContactOutline },
-        { name: 'LinkedIn', href: import.meta.env.VITE_LINKEDIN, icon: MdiLinkedin },
-        { name: 'GitHub', href: import.meta.env.VITE_GITHUB, icon: MdiGithub },
+        { name: 'Contact', href: "mailto:peter.riesz.developer@gmail.com", icon: MdiContactOutline },
+        { name: 'LinkedIn', href: "https://www.linkedin.com/in/p%C3%A9ter-riesz-55452a223/", icon: MdiLinkedin },
+        { name: 'GitHub', href: "https://github.com/rieszpeti", icon: MdiGithub },
       ],
     };
   </script>
