@@ -14,31 +14,33 @@
         { name: 'CV', href: "https://drive.google.com/file/d/1SXZ65dmnlDYuTZexWJgjaAzdhs5nxt_d/view?usp=sharing" }
     ];
 
-    let isShowEmailMessage = false;
-    let emailMessage = '';
+    let emailMessage: string = '';
+    let isShowEmailMessage: boolean = false;
 
-    const copyEmail = () => {
+    const showEmailMessage = (message: string, duration: number = 5000): void => {
+        emailMessage = message;
+        isShowEmailMessage = true;
+        setTimeout(() => {
+            isShowEmailMessage = false;
+        }, duration);
+    };
+
+    const copyEmail = (): void => {
         if (!navigator.clipboard) {
-            emailMessage = `Copy manually, because clipboard is not available: ${email}`;
-            isShowEmailMessage = true;
-            setTimeout(() => isShowEmailMessage = false, 7000);
+            showEmailMessage(`Copy manually, because clipboard is not available: ${email}`, 7000);
         } else {
-            (navigator.clipboard as Clipboard).writeText(email)
+            navigator.clipboard.writeText(email)
                 .then(() => {
-                    emailMessage = "Email copied";
-                    isShowEmailMessage = true;
-                    setTimeout(() => isShowEmailMessage = false, 5000);
+                    showEmailMessage("Email copied", 5000);
                 })
-                .catch(err => {
-                    emailMessage = 'Oops, something went wrong while copying the email. Please try again later.';
-                    isShowEmailMessage = true;
+                .catch((err: Error) => {
+                    showEmailMessage('Oops, something went wrong while copying the email. Please try again later.', 5000);
                     if (import.meta.env.MODE === 'development') {
                         console.error('Failed to copy email: ', err);
                     }
                 });
         }
     };
-
 
 </script>
 
