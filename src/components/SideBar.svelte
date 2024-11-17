@@ -31,7 +31,7 @@
       ],
       Connect: [
         { name: 'Contact', href: 'mailto:' + import.meta.env.VITE_MY_EMAIL, icon: MdiContactOutline },
-        { name: 'LinkedIn', href: String(import.meta.env.VITE_LINKEDIN), icon: MdiLinkedin },
+        { name: 'LinkedIn', href: import.meta.env.VITE_LINKEDIN, icon: MdiLinkedin },
         { name: 'GitHub', href: import.meta.env.VITE_GITHUB, icon: MdiGithub },
       ],
     };
